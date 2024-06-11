@@ -1,0 +1,71 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distribute items evenly along the main axis */
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.flex-item {
+  width: 25%; /* Each flex item takes up 25% of the container width */
+  height: 150px;
+  margin: 10px; /* Keep the margin */
+  background-color: #ffffff;
+  border: 2px solid #000; /* Black border */
+  border-radius: 5px;
+  text-align: center;
+  line-height: 150px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.flex-item:hover {
+  background-color: #f0f0f0; /* Background color change on hover */
+  border-color: #aaa; /* Border color change on hover */
+  transform: scale(1.05); /* Scale up the flex item slightly on hover */
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.flex-item {
+  width: 25%;
+  height: 150px;
+  margin: 10px;
+  background-color: #ffffff;
+  border: 2px solid #000;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 150px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.flex-item:hover {
+  background-color: #f0f0f0;
+  border-color: #aaa;
+  transform: scale(1.05);
+}
+
