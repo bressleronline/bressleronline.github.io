@@ -1,8 +1,10 @@
 // Handle click on header text to redirect
 var headerText = document.getElementById("headerText");
-headerText.addEventListener("click", function() {
-    window.location.href = "artclass.html";
-});
+if (headerText) {
+    headerText.addEventListener("click", function() {
+        window.location.href = "artclass.html";
+    });
+}
 
 // Handle search functionality
 function handleKeyPress(event) {
@@ -54,4 +56,4 @@ for (var i = 0; i < flexItems.length; i++) {
 
 // Attach keyup event to search input
 var searchInput = document.getElementById('searchInput');
-searchInput.addEventListener('keyup', handleKeyPress);
+searchInput.addEventListener('keyup', handleKeyPress); // Attach handleKeyPress function
