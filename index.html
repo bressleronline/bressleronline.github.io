@@ -24,6 +24,39 @@
     <link href="style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
+   
+
+        <script>
+            const searchInput = document.getElementById('searchInput');
+            const searchResults = document.getElementById('searchResults');
+
+            searchInput.addEventListener('input', async (e) => {
+                const query = e.target.value.trim();
+                if (query.length === 0) {
+                    searchResults.innerHTML = '';
+                    return;
+                }
+
+                try {
+                    const response = await fetch(`/search?q=${query}`);
+                    const data = await response.json();
+                    displayResults(data);
+                } catch (error) {
+                    console.error('Error fetching search results:', error);
+                }
+            });
+
+            function displayResults(results) {
+                searchResults.innerHTML = '';
+                results.forEach(game => {
+                    const gameElement = document.createElement('div');
+                    gameElement.textContent = game.name;
+                    searchResults.appendChild(gameElement);
+                });
+            }
+        </script>
+    </body>
+    </html>
     <button class="gradient-button" onclick="window.location.href='apps.html'">Apps</button>
 
     <header id="header">
@@ -45,10 +78,26 @@
       }
     </style>
 
-    <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Search for a game..." onkeypress="handleKeyPress(event)">
-      <button onclick="searchGames()"><i class="fas fa-search"></i></button>
-    </div>
+
+<div class="search-bar">
+  <input type="text" id="searchInput" placeholder="Search for a game..." onkeypress="handleKeyPress(event)">
+  <button onclick="searchGames()"><i class="fas fa-search"></i></button>
+</div>
+
+
+<script>
+  function handleKeyPress(event) {
+      if (event.key === 'Enter') {
+          searchGames();
+      }
+  }
+
+  function searchGames() {
+      // Add your search functionality here
+      // This function will be called when the Enter key is pressed or when the search button is clicked
+  }
+</script>
+  
 
     <div class="flex-container">
       <div class="flex-item" onclick="window.location.href='/bitlife.html';" style="background-image: url('images/bitlife.png'); background-repeat: no-repeat; background-size: cover; color: transparent;">
@@ -409,7 +458,34 @@
     </div>
     <div class="bubble">A Max B. Production<br></div>
 
-    <div align='center'><a href='https://www.free-website-hit-counter.com'><img src='https://www.free-website-hit-counter.com/c.php?d=9&id=172475&s=5' border='0' alt='Free Website Hit Counter'></a><br / ><small><a href='https://www.free-website-hit-counter.com' title="Free Website Hit Counter">Free website hit counter</a></small></div>
+    <div align='center'><a href='https://www.free-website-hit-counter.com'><img src='https://www.free-website-hit-counter.com/c.php?d=9&id=172475&s=5' border='0' alt='Free Website Hit Counter'></a><br / ><small><a href='https://www.free-website-hit-counter.com' title="Free Website Hit Counter"></a></small></div>
 
 
 
+
+  <script>
+    function searchGames() {
+      var input, filter, flexContainer, flexItem, a, i, txtValue;
+      input = document.getElementById('searchInput');
+      filter = input.value.toUpperCase();
+      flexContainer = document.getElementsByClassName('flex-container')[0];
+      flexItem = flexContainer.getElementsByClassName('flex-item');
+
+      for (i = 0; i < flexItem.length; i++) {
+        a = flexItem[i];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          flexItem[i].style.display = '';
+        } else {
+          flexItem[i].style.display = 'none';
+        }
+      }
+    }
+
+
+
+
+  </script>
+</body>
+
+</html>
