@@ -272,3 +272,25 @@ footer {
   background-color: #04AA6D;
   color: white;
 }
+.random-game {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 12px 24px; /* Increased padding for a larger button */
+  background: linear-gradient(135deg, #6e8efb, #a777e3); /* Gradient background */
+  color: #fff; /* White text */
+  text-transform: uppercase; /* Uppercase text */
+  font-weight: bold; /* Bold text */
+  font-family: 'Roboto', sans-serif; /* Font family */
+  font-size: 12px; /* Increased font size */
+  cursor: pointer; /* Pointer cursor */
+  border: none; /* No border */
+  border-radius: 25px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: background 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+.random-game:hover {
+  background: linear-gradient(135deg, #a777e3, #6e8efb); /* Change gradient on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
